@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "chenxsan.vscode-standardjs",
+    "timonvs.reactsnippetsstandard",
+    "capaj.vscode-standardjs-snippets",
+    "stylelint.vscode-stylelint"
+  ],
+  "unwantedRecommendations": []
+}

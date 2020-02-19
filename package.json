@@ -1,5 +1,5 @@
 {
-  "name": "ivetou-biolerplate",
+  "name": "frontend-boilerplate",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "test:cover": "yarn test --coverage",
     "lint": "standard",
     "lint-fix": "standard --fix",
+    "stylelint-fix": "stylelint --fix",
     "storybook": "start-storybook",
     "eject": "react-scripts eject"
   },
@@ -27,7 +28,9 @@
     "babel-loader": "^8.0.6",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.7",
-    "standard": "^14.3.1"
+    "standard": "^14.3.1",
+    "stylelint": "^13.2.0",
+    "stylelint-config-standard": "^20.0.0"
   },
   "husky": {
     "hooks": {
@@ -36,9 +39,12 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+    "src/**/*.{js,jsx,json}": [
       "yarn lint",
       "yarn test"
+    ],
+    "src/**/*.{css,scss}": [
+      "yarn stylelint"
     ]
   },
   "standard": {

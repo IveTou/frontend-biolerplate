@@ -4,4 +4,3 @@
   },
   "include": ["src"]
 }
-/* https://code.visualstudio.com/docs/languages/jsconfig#_using-webpack-aliases */
