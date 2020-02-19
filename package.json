@@ -2,19 +2,51 @@
   "name": "ivetou-biolerplate",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --watchAll=false --passWithNoTests",
+    "test:cover": "yarn test --coverage",
+    "lint": "standard",
+    "lint-fix": "standard --fix",
+    "storybook": "start-storybook",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "styled-components": "^5.0.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@storybook/react": "^5.3.13",
+    "babel-loader": "^8.0.6",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
+    "standard": "^14.3.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "yarn lint",
+      "yarn test"
+    ]
+  },
+  "standard": {
+    "env": [
+      "jest",
+      "es6",
+      "browser"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
