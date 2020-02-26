@@ -31,7 +31,8 @@
     "lint-staged": "^10.0.7",
     "standard": "^14.3.1",
     "stylelint": "^13.2.0",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-twbs-bootstrap": "^2.0.1"
   },
   "husky": {
     "hooks": {
@@ -44,7 +45,7 @@
       "yarn lint",
       "yarn test"
     ],
-    "src/**/*.{css,scss}": [
+    "src/**/*.{js,jsx,css,scss}": [
       "yarn stylelint"
     ]
   },
